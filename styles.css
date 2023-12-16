@@ -201,13 +201,15 @@ html{
 .todo-date{
   text-align: end;
 }
-.todo-date p{
+.todo-date span{
   margin: 0;
   padding: 0;
   color: #808080;
   margin: 5px;
+  font-size: 0.8rem;
+}
+.todo-date :last-child{
   margin-right: 110px;
-  font-size: 0.7rem;
 }
 
 .checkbox{
@@ -224,10 +226,14 @@ html{
 }
 
 
-.delete-btn, .edit-btn{
+.delete-btn, .edit-btn, .save-btn{
+  cursor: pointer;
   background: transparent;
   border: none;
+  color: white;
 }
+
+
 
 
 

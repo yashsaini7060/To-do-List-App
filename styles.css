@@ -192,7 +192,10 @@ html{
 }
 
 .todo-data{
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .todo-date{
@@ -208,11 +211,18 @@ html{
 }
 
 .checkbox{
-  margin-right: 1rem;
+  width: 2%;
+  /* margin-right: 1rem; */
 }
-.edit-btn{
-  margin-left: 1rem;
+
+.todo-data p{
+  width: 85%;
 }
+.buttons{
+  width: 7%;
+  display: flex;
+}
+
 
 .delete-btn, .edit-btn{
   background: transparent;

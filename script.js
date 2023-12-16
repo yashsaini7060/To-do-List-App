@@ -36,7 +36,6 @@ function data() {
 }
 
 function addItem(todoItem) {
-  alert("click")
 
   var todoContainer = document.createElement("div");
   todoContainer.classList.add("todo-item");

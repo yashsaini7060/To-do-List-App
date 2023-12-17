@@ -18,9 +18,10 @@ function getData() {
 
   // Create an object to represent the to-do item
   let todoItem = {
+    id : todoList.length,
     task: todoValue,
     date: dateValue,
-    status: "incomplete"
+    status: "todo"
   };
 
   // Add the to-do item to the array
@@ -39,7 +40,10 @@ function addItem(todoItem) {
   let parentContainer = document.getElementById("todos-container");
 
   let todoContainer = document.createElement("div");
+  todoContainer.draggable = true;
   todoContainer.classList.add("todo-item");
+  todoContainer.setAttribute("data-container", todoItem.id)
+  todoContainer.addEventListener("dragstart", onDragStart);
 
   let todoDataContainer = document.createElement("div");
   todoDataContainer.classList.add("todo-data");
@@ -51,10 +55,10 @@ function addItem(todoItem) {
   checkbox.addEventListener("change", function () {
     // Update the status to "completed" when the checkbox is checked
     if (checkbox.checked) {
-      todoItem.status = "completed";
+      todoItem.status = "done";
       taskDescription.style.textDecoration = "line-through";
     } else {
-      todoItem.status = "incomplete";
+      todoItem.status = "todo";
       taskDescription.style.textDecoration = "none";
     }
 
@@ -150,3 +154,4 @@ function addItem(todoItem) {
   document.getElementById("todo").value = "";
   document.getElementById("date").value = "";
 }
+
